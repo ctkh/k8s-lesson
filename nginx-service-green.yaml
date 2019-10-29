@@ -11,4 +11,4 @@ spec:
     nodePort: 30080 #外部から接続する時のポート
   selector:
     app: nginx-thx        # この2つのラベルがあるPodに振る
-    color: blue
+    color: green

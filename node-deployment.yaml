@@ -8,12 +8,14 @@ spec:
   selector:
     matchLabels:
       app: nginx-thx     #このラベルが付いているPodの起動数を監視する
+      color: blue
   replicas: 2
 ##### Pod #####
   template:
     metadata:
       labels:
         app: nginx-thx   #これがPodにつくラベル
+        color: blue
     spec:
       containers:
       - name: nginx-thx   #これはPodに含まれるコンテナ名

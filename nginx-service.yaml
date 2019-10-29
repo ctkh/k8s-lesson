@@ -10,4 +10,5 @@ spec:
   - port: 80          #振り分けるPodのポート
     nodePort: 30080 #外部から接続する時のポート
   selector:
-    app: nginx-thx        # app: nginx-thxのラベルがあるPodに振る
+    app: nginx-thx        # この2つのラベルがあるPodに振る
+    color: blue

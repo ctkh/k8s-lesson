@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-thx
+  name: nginx-thx-green
 ##### ReplicaSet  #####
 spec:
   selector:

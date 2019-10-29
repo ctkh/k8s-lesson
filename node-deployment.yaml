@@ -24,25 +24,25 @@ spec:
         volumeMounts:
         - mountPath: /etc/nginx        # マウント先
           readOnly: true
-          name: vol-nginx-conf         # volumesにあるこの名前のボリュームをマウント
+          name: cm-nginx-conf         # volumesにあるこの名前のボリュームをマウント
         - mountPath: /var/log/nginx
           name: vol-log
         - mountPath: /var/www
           readOnly: true
-          name: vol-nginx-html-blue
+          name: cm-nginx-html
       # ボリュームの定義
       volumes:
-      - name: vol-nginx-conf          # ボリューム名
+      - name: cm-nginx-conf          # ボリューム名
         configMap:                    # ConfigMapをボリュームとしますよ
-          name: nginx-conf            # ConfigMap名
+          name: cm-nginx-conf          # ConfigMap名
           items:
             - key: nginx.conf         # ConfigMap中のこのキーの値を
               path: nginx.conf        # このファイル名にして置きます
       - name: vol-log
         emptyDir: {}
-      - name: nginx-html
+      - name: cm-nginx-html
         configMap:
-          name: vol-nginx-html-blue
+          name: cm-nginx-html-blue
           items:
             - key: blue.html  
               path: index.html
